@@ -51,6 +51,15 @@ exports.update = function(req, res) {
   });
 };
 
+// Player bought
+exports.update = function (req,res){
+  var players = req.body.players;
+  var player;
+  for (player in players) {
+    Thing.update({_id: player}, {active: false, owner: player}, {multi: false});
+  }
+}
+
 // Deletes a thing from the DB.
 exports.destroy = function(req, res) {
   Thing.findById(req.params.id, function (err, thing) {
