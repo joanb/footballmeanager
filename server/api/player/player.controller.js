@@ -52,7 +52,7 @@ exports.update = function(req, res) {
 };
 
 // Player bought
-exports.update = function (req,res){
+exports.playerBought = function (req,res){
   var players = req.body.players;
   var player;
   for (player in players) {

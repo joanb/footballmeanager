@@ -8,7 +8,7 @@ var PlayerSchema = new Schema({
   cost: {type:Number, default:0, required:true},
   info: String,
   active: Boolean,
-  owner: string
+  owner: String
 });
 
 module.exports = mongoose.model('Player', PlayerSchema);
