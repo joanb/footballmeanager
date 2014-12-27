@@ -12,6 +12,10 @@ var UserSchema = new Schema({
     type: String,
     default: 'user'
   },
+  coins: {
+    type: Number,
+    default: 200
+  },
   hashedPassword: String,
   provider: String,
   salt: String,
