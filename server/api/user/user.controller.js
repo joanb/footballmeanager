@@ -99,3 +99,10 @@ exports.me = function(req, res, next) {
 exports.authCallback = function(req, res, next) {
   res.redirect('/');
 };
+
+//update coins ina buy
+exports.update(function(req, res) {
+  var userID = req.user._id;
+  var coinsSpent = req.body.coins;
+  User.update({_id: userID}, {coins: coinsSpent}, {multi:false});
+})
