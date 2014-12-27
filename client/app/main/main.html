@@ -1,0 +1,30 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div ng-show="isAdmin()" class="row">
+    <form class="thing-form col-lg-6">
+      <p class="input-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" placeholder="Add a new player." ng-model="newThing.name">
+      </p>
+      <p class="input-group">
+        <label for="cost">Cost</label>
+        <input type="number" class="form-control" placeholder="Add player's cost" ng-model="newThing.cost">
+      </p>
+      <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Players:</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
+        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}} - {{thing.cost}}<button ng-show="isAdmin()" type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+  </div>
+</footer>
